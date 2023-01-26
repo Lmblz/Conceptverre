@@ -11,6 +11,11 @@ const routes = [
     path: '/panier',
     name: 'cart',
     component: () => import('../views/CartView.vue')
+  },
+  {
+    path: '/notre-histoire',
+    name: 'history',
+    component: () => import('../views/HistoryView.vue')
   }
 ]
 

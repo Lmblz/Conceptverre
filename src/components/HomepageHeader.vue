@@ -34,6 +34,7 @@
                     object-fit: cover;
                     max-height: 115vh;
                     height: 100%;
+                    min-width: 100vw;
                     width: 100%;
                 }   
             }

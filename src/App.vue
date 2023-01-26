@@ -45,9 +45,6 @@
     }
     $DGLight: 'Darker Grotesque Light', Arial, Helvetica, sans-serif;
 
-
-
-
     #app { 
 
         h1 {
@@ -96,6 +93,20 @@
                 text-transform: uppercase;
                 color: black;
             }
+        }
+
+        &::before {
+            transition: all .5s;
+            display: none;
+            opacity: 0;
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 11;
         }
     }
 </style>

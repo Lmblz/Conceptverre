@@ -1,7 +1,7 @@
 <template>
     <nav class="nav">
         <div class="nav__menu-btn">
-            <button class="nav__menu-btn__line"><span></span></button>
+            <button class="nav__menu-btn__line" @click="showMenu()"><span></span></button>
         </div>
         <div class="nav__logo">
             <router-link to="/"><img src="../assets/logo.svg"></router-link>
@@ -10,11 +10,62 @@
             <router-link to="/panier"><img src="../assets/cart.png"></router-link>
         </div>
     </nav>
+    <nav id="menu" class="menu closed">
+        <div class="menu__wrapper">
+            <div class="menu__wrapper__close">
+                <button class="menu__wrapper__close__button" @click="showMenu()">
+                    <img src="../assets/close-menu.svg" alt="close menu" />
+                </button>
+            </div>
+            <div class="menu__wrapper__entries">
+                <p class="menu__wrapper__entries__entry home">Accueil</p>
+                <p class="menu__wrapper__entries__entry">Notre histoire</p>
+                <p class="menu__wrapper__entries__entry">Boutique</p>
+                <p class="menu__wrapper__entries__entry">Sur-mesure</p>
+                <p class="menu__wrapper__entries__entry">Personnalisation</p>
+                <p class="menu__wrapper__entries__entry">Galerie</p>
+                <p class="menu__wrapper__entries__entry">Mon espace</p>
+                <p class="menu__wrapper__entries__entry">Panier</p>
+                <p class="menu__wrapper__entries__entry">Contact</p>
+            </div>
+            <div class="menu__wrapper__image">
+                <img src="../assets/logo-small.svg" alt="Logo concept verre">
+            </div>
+        </div>
+    </nav>
 </template>
 
 <script>
+    import $ from 'jquery'
     export default {
-        name: 'NavBarre'
+        name: 'NavBarre',
+        methods: {
+            showMenu() {
+                let menu = $('#menu')
+                if(menu.hasClass('closed')) 
+                {
+                    menu.removeClass('closed')
+                    $('body').addClass('no-scroll')
+                    $('body').click((e) => { 
+                        const menuDimensions = menu[0].getBoundingClientRect()
+                        const clickedX = e.clientX
+                        if (clickedX > menuDimensions.width) {
+                            menu.addClass('closed')
+                            $('body').removeClass('no-scroll')
+
+                            return
+                        }
+                    })
+                } 
+                else 
+                {
+                    menu.addClass('closed')
+                    $('body').removeClass('no-scroll')
+                }
+            }
+        },
+        mounted() {
+        }
     }
 </script>
 
@@ -66,6 +117,48 @@
                     &::after {
                         top: 10px;
                     }
+                }
+            }
+        }
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 15;
+        background: white;
+        min-height: 100vh;
+        height: 100%;
+        max-width: 30rem;
+        width: 100%;
+        text-align: center;
+        transition: all .5s;
+
+        &.closed {
+            transform: translateX(-100%);
+        }
+
+        &__wrapper {
+            display: flex;
+            height: calc(100% - 8rem);
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4rem 0;
+
+            &__close {
+                &__button {
+                    background: transparent;
+                    border: 0;
+                }
+            }
+
+            &__entries {
+                &__entry {
+                    &.home {
+                        margin: 0 0 2rem 0;
+                    }
+                    margin: 1rem 0;
                 }
             }
         }
