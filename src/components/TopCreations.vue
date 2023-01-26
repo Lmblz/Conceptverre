@@ -57,6 +57,10 @@
             padding: 3rem 9rem;
             margin: auto;
 
+            h2 {
+                margin: 0;
+            }
+
             &__separator {
                 height: 1px;
                 width: 7.5rem;

@@ -1,14 +1,17 @@
 <template>
     <NavBar />
     <router-view />
+    <MainFooter />
 </template>
 
 <script>
     import NavBar from './components/NavBar.vue';
+    import MainFooter from './components/MainFooter.vue';
     export default {
         name: 'AppVue',
         components: {
             NavBar,
+            MainFooter
         }
     }
 </script>
@@ -36,6 +39,11 @@
     }
     $DGMed: 'Darker Grotesque Medium', Arial, Helvetica, sans-serif;
 
+    @font-face {
+        font-family: 'Darker Grotesque Light';
+        src: url('./assets/fonts/DarkerGrotesque-Light.ttf') format('truetype');
+    }
+    $DGLight: 'Darker Grotesque Light', Arial, Helvetica, sans-serif;
 
 
 
@@ -51,13 +59,23 @@
         h2 {
             font-family: $SilkReg;
             font-size: 3.125rem;
-            margin: 0;
+            
+            span {
+                font-family: $SilkReg;
+                font-size: 3.125rem;
+            }
+        }
+
+        h4 {
+            font-family: $DGLight;
+            font-size: 1.5rem;
+            text-transform: uppercase;
         }
 
         p, a, span, button, li {
             font-family: $DGMed;
             font-size: 2rem;
-            margin: 0;
+            //margin: 0;
         }
 
         button {

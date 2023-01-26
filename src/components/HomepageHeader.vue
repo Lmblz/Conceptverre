@@ -44,6 +44,10 @@
                 transform: translateX(-50%) translateY(-50%);
                 color: white;
                 width: 100%;
+
+                p {
+                    margin: 0;
+                }
                 
                 &__button {
                     margin-top: 5rem;
