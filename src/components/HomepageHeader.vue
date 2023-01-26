@@ -32,7 +32,7 @@
 
                 img {
                     object-fit: cover;
-                    max-height: 100vh;
+                    max-height: 115vh;
                     height: 100%;
                     width: 100%;
                 }   

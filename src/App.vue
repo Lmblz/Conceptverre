@@ -40,12 +40,18 @@
 
 
 
-    #app {
+    #app { 
 
         h1 {
             font-family: $SilkReg;
             font-size: 7.5rem;
             margin: 0
+        }
+
+        h2 {
+            font-family: $SilkReg;
+            font-size: 3.125rem;
+            margin: 0;
         }
 
         p, a, span, button, li {
@@ -57,6 +63,7 @@
         button {
             padding: 0.5rem 2rem 0.9rem 2rem;
             line-height: 1;
+            cursor: pointer;
 
             &.btn-white {
                 background: transparent;
@@ -64,20 +71,13 @@
                 text-transform: uppercase;
                 color: white;
             }
-        }
 
-
-        nav {
-            position: sticky;
-            top: 0;
-            height: 0;
-            display: flex;
-            z-index: 10;
-            max-width: 85%;
-            width: 100%;
-            margin: auto;
-            color: white;
-            justify-content: space-between;
+            &.btn-black {
+                background: transparent;
+                border: solid 1px black;
+                text-transform: uppercase;
+                color: black;
+            }
         }
     }
 </style>
