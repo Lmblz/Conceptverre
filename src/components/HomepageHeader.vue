@@ -6,8 +6,8 @@
         </picture>
         <div class="header-homepage__description">
             <h1>Donnez <i>vie</i> à votre <i>intérieur</i></h1>
-            <p><b>Concept Verre</b> voit le jour en 2007, quintessence d'un travail passionnant et passionné.</p>
-            <p>Dans notre atelier basé à Nice, nous concevons des <b>luminaires d'intérieur au design épuré</b></p>
+            <p class="subtitle"><b>Concept Verre</b> voit le jour en 2007, quintessence d'un travail passionnant et passionné.</p>
+            <p class="subtitle">Dans notre atelier basé à Nice, nous concevons des <b>luminaires d'intérieur au design épuré</b></p>
             <router-link to="/">
                 <button class="header-homepage__description__button btn-white">Découvrir</button>
             </router-link>

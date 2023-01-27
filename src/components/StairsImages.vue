@@ -28,7 +28,7 @@
             <p class="stairs-images__wrapper-text__p">
                 {{ stairsP }}
             </p>
-            <router-link to="/">
+            <router-link :to="stairsBtnLink">
                 <button class="stairs-images__wrapper-text__button btn-black">{{ stairsBtn }}</button>
             </router-link>
         </div>
@@ -45,7 +45,8 @@
             'stairsTitle',
             'stairsTitleI',
             'stairsP',
-            'stairsBtn'
+            'stairsBtn',
+            'stairsBtnLink'
         ]
     }
 </script>

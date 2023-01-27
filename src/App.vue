@@ -74,22 +74,55 @@
             text-transform: uppercase;
         }
 
-        p, a, span, button, li {
+        p:not(.subtitle), a, span, button, li {
             font-family: $DGMed;
-            font-size: 2rem;
+            font-size: 1.625rem;
             //margin: 0;
+        }
+
+        p.subtitle {
+            font-size: 2rem;
+            font-family: $DGMed;
         }
 
         button {
             padding: 0.5rem 2rem 0.9rem 2rem;
             line-height: 1;
             cursor: pointer;
+            position: relative;
+            transition: all .5s;
+
+            &::before {
+                content: '';
+                height: 10px;
+                width: 10px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                opacity: 0;
+                transform: translateY(-50%) rotate(45deg);
+                transition: all .5s;
+            }
+
+            &:hover {
+                padding-left: 3rem;
+
+                &::before {
+                    opacity: 1;
+                    transform: translateY(-50%) translateX(1rem) rotate(45deg);
+                }
+            }
 
             &.btn-white {
                 background: transparent;
                 border: solid 1px white;
                 text-transform: uppercase;
                 color: white;
+
+                &::before {
+                    border-right: solid 1px white;
+                    border-top: solid 1px white;
+                }
             }
 
             &.btn-black {
@@ -97,6 +130,11 @@
                 border: solid 1px black;
                 text-transform: uppercase;
                 color: black;
+
+                &::before {
+                    border-right: solid 1px black;
+                    border-top: solid 1px black;
+                }
             }
         }
 
