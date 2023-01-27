@@ -18,15 +18,33 @@
                 </button>
             </div>
             <div class="menu__wrapper__entries">
-                <p class="menu__wrapper__entries__entry home">Accueil</p>
-                <p class="menu__wrapper__entries__entry">Notre histoire</p>
-                <p class="menu__wrapper__entries__entry">Boutique</p>
-                <p class="menu__wrapper__entries__entry">Sur-mesure</p>
-                <p class="menu__wrapper__entries__entry">Personnalisation</p>
-                <p class="menu__wrapper__entries__entry">Galerie</p>
-                <p class="menu__wrapper__entries__entry">Mon espace</p>
-                <p class="menu__wrapper__entries__entry">Panier</p>
-                <p class="menu__wrapper__entries__entry">Contact</p>
+                <router-link to="/">
+                    <p class="menu__wrapper__entries__entry home">Accueil</p>
+                </router-link>
+                <router-link to="/notre-histoire">
+                    <p class="menu__wrapper__entries__entry">Notre histoire</p>
+                    </router-link>
+                <router-link to="/boutique">
+                    <p class="menu__wrapper__entries__entry">Boutique</p>
+                    </router-link>
+                <router-link to="/sur-mesure">
+                    <p class="menu__wrapper__entries__entry">Sur-mesure</p>
+                    </router-link>
+                <router-link to="/personnalisation">
+                    <p class="menu__wrapper__entries__entry">Personnalisation</p>
+                    </router-link>
+                <router-link to="/galerie">
+                    <p class="menu__wrapper__entries__entry">Galerie</p>
+                    </router-link>
+                <router-link to="/mon-espace">
+                    <p class="menu__wrapper__entries__entry">Mon espace</p>
+                    </router-link>
+                <router-link to="/panier">
+                    <p class="menu__wrapper__entries__entry">Panier</p>
+                    </router-link>
+                <router-link to="/contact">
+                    <p class="menu__wrapper__entries__entry">Contact</p>
+                    </router-link>
             </div>
             <div class="menu__wrapper__image">
                 <img src="../assets/logo-small.svg" alt="Logo concept verre">
@@ -154,6 +172,10 @@
             }
 
             &__entries {
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
                 &__entry {
                     &.home {
                         margin: 0 0 2rem 0;

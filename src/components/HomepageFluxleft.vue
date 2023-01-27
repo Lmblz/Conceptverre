@@ -25,7 +25,9 @@
                 Chacune de nos productions est unique, faite à la main dans notre atelier. <br>
                 Vous ne trouvez pas la création qui fera briller votre intérieur ? Créez-la.
             </p>
-            <button class="flux__text-wrapper__button btn-black">Personnaliser ma lampe</button>
+            <router-link to="/personnalisation">
+                <button class="flux__text-wrapper__button btn-black">Personnaliser ma lampe</button>
+            </router-link>
         </div>
     </div>
 </template>

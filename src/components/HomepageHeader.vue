@@ -8,7 +8,9 @@
             <h1>Donnez <i>vie</i> à votre <i>intérieur</i></h1>
             <p><b>Concept Verre</b> voit le jour en 2007, quintessence d'un travail passionnant et passionné.</p>
             <p>Dans notre atelier basé à Nice, nous concevons des <b>luminaires d'intérieur au design épuré</b></p>
-            <button class="header-homepage__description__button btn-white">Découvrir</button>
+            <router-link to="/">
+                <button class="header-homepage__description__button btn-white">Découvrir</button>
+            </router-link>
         </div>
     </header>
 </template>
@@ -32,9 +34,7 @@
 
                 img {
                     object-fit: cover;
-                    max-height: 115vh;
-                    height: 100%;
-                    min-width: 100vw;
+                    height: 115vh;
                     width: 100%;
                 }   
             }

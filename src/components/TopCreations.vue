@@ -24,7 +24,9 @@
                 </picture>
             </div>
         </div>
-        <button class="top-creations__button btn-black">Découvrir notre boutique</button>
+        <router-link to="/boutique">
+            <button class="top-creations__button btn-black">Découvrir notre boutique</button>
+        </router-link>
     </div>
 </template>
 

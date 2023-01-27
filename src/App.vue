@@ -63,6 +63,11 @@
             }
         }
 
+        h3 {
+            font-family: $SilkReg;
+            font-size: 3.125rem;
+        }
+
         h4 {
             font-family: $DGLight;
             font-size: 1.5rem;

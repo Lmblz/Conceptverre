@@ -5,7 +5,9 @@
             <span class="tagline__title__second">fait pour <i>briller</i></span>
         </h2>
         <div class="tagline__separator"></div>
-        <button class="tagline__buton btn-black">Nous contacter</button>
+        <router-link to="/contact">
+            <button class="tagline__buton btn-black">Nous contacter</button>
+        </router-link>
     </div>
 </template>
 

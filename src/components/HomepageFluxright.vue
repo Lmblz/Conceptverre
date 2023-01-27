@@ -7,10 +7,12 @@
                 Le verre est le pilier de nos créations. Nous avons choisi cette antique matière pour ses 
                 jeux de transparence et de reflet, afin de <b>sublimer la lumière</b> et <b>habiller les espaces</b>
             </p>
-            <button class="flux__text-wrapper__button btn-black">Personnaliser ma lampe</button>
+            <router-link to="/notre-histoire">
+                <button class="flux__text-wrapper__button btn-black">Découvrir l'atelier</button>
+            </router-link>
         </div>
         <div class="flux__images-wrapper">
-            <div class="flux__images-wrapper__left">
+            <div class="flux__images-wrapper__left">    
                 <div class="flux__images-wrapper__left__image square">
                     <source srcset="../assets/illu-5.webp" type="image/webp" />
                     <img src="../assets/illu-5.jpg" alt="Image d'illustration">
