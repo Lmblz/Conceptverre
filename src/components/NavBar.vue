@@ -177,9 +177,6 @@
                     text-decoration: none;
                 }
                 &__entry {
-                    &.home {
-                        margin: 0 0 2rem 0;
-                    }
                     margin: 1rem 0;
                 }
             }

@@ -51,7 +51,7 @@
 
 <script>
     import FinitionsBlocs from '@/components/FinitionsBlocs.vue';
-import PageHeader from '@/components/PageHeader.vue';
+    import PageHeader from '@/components/PageHeader.vue';
     import StairsImages from '@/components/StairsImages.vue';
     export default {
         name: 'HistoryView',

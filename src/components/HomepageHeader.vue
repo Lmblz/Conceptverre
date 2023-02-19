@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: 'HomepageHeader'
+        name: 'HomepageHeader',
     }
 </script>
 

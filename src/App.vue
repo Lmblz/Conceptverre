@@ -12,7 +12,7 @@
         components: {
             NavBar,
             MainFooter
-        }
+        },
     }
 </script>
 
@@ -92,24 +92,26 @@
             position: relative;
             transition: all .5s;
 
-            &::before {
-                content: '';
-                height: 10px;
-                width: 10px;
-                position: absolute;
-                left: 0;
-                top: 50%;
-                opacity: 0;
-                transform: translateY(-50%) rotate(45deg);
-                transition: all .5s;
-            }
-
-            &:hover {
-                padding-left: 3rem;
-
+            &:not(.nav__menu-btn__line) {
                 &::before {
-                    opacity: 1;
-                    transform: translateY(-50%) translateX(1rem) rotate(45deg);
+                    content: '';
+                    height: 10px;
+                    width: 10px;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    opacity: 0;
+                    transform: translateY(-50%) rotate(45deg);
+                    transition: all .5s;
+                }
+
+                &:hover {
+                    padding-left: 3rem;
+
+                    &::before {
+                        opacity: 1;
+                        transform: translateY(-50%) translateX(1rem) rotate(45deg);
+                    }
                 }
             }
 

@@ -16,6 +16,11 @@ const routes = [
     path: '/notre-histoire',
     name: 'history',
     component: () => import('../views/HistoryView.vue')
+  },
+  {
+    path: '/sur-mesure',
+    name: 'custom',
+    component: () => import('../views/CustomView.vue')
   }
 ]
 
