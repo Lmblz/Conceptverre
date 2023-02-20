@@ -21,6 +21,11 @@ const routes = [
     path: '/sur-mesure',
     name: 'custom',
     component: () => import('../views/CustomView.vue')
+  },
+  {
+    path: '/galerie',
+    name: 'gallery',
+    component: () => import('../views/GalleryView.vue')
   }
 ]
 
