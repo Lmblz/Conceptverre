@@ -43,13 +43,21 @@
 
         &::before {
             content: '';
-            height: 9rem;
+            height: 15vh;
             width: 1px;
             background: white;
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateY(-100%) translateX(-50%);
+
+            @media screen and (max-height: 800px) {
+                height: 10vh;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
         }
 
         &__title-wrapper {
@@ -58,6 +66,14 @@
             width: fit-content;
             padding: 3rem 9rem;
             margin: auto;
+
+            @media screen and (max-width: 1024px) {
+                padding: 2rem 5rem;
+            }
+
+            @media screen and (max-width: 800px) {
+                padding: 2rem .5rem;
+            }
 
             h2 {
                 margin: 0;
@@ -78,6 +94,16 @@
             margin: auto;
             justify-content: space-between;
             margin-bottom: 6rem;
+
+            &__creation {
+                @media screen and (max-width: 1024px) {
+                    width: 33%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 </style>

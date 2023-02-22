@@ -45,27 +45,62 @@
     }
     $DGLight: 'Darker Grotesque Light', Arial, Helvetica, sans-serif;
 
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
     #app { 
+
+        scroll-behavior: smooth;
 
         h1 {
             font-family: $SilkReg;
-            font-size: 7.5rem;
-            margin: 0
+            font-size: 7vw;
+            margin: 0;
+            padding: 0 20px;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 4.25rem;
+                line-height: 1;
+            }
+
+            @media screen and (min-width: 1901px) {
+                font-size: 8rem;
+            }
         }
 
         h2 {
             font-family: $SilkReg;
             font-size: 3.125rem;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 2.5rem;
+                line-height: 1;
+            }
             
             span {
                 font-family: $SilkReg;
                 font-size: 3.125rem;
+
+                @media screen and (max-width: 1024px) {
+                    font-size: 2.5rem;
+                    line-height: 1;
+                }
             }
         }
 
         h3 {
             font-family: $SilkReg;
             font-size: 3.125rem;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 2.5rem;
+            }
         }
 
         h4 {
@@ -78,11 +113,19 @@
             font-family: $DGMed;
             font-size: 1.625rem;
             //margin: 0;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 1.25rem;
+            }
         }
 
         p.subtitle {
             font-size: 2rem;
             font-family: $DGMed;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 1.25rem;
+            }
         }
 
         button {
@@ -92,7 +135,7 @@
             position: relative;
             transition: all .5s;
 
-            &:not(.nav__menu-btn__line) {
+            &:not(.nav__menu-btn__line, .menu__wrapper__close__button) {
                 &::before {
                     content: '';
                     height: 10px;
@@ -147,7 +190,7 @@
             content: '';
             position: absolute;
             top: 0;
-            height: 100%;
+            height: 200vh;
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.5);

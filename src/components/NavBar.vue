@@ -1,7 +1,7 @@
 <template>
     <nav class="nav">
         <div class="nav__menu-btn">
-            <button class="nav__menu-btn__line" @click="showMenu()"><span></span></button>
+            <a href="#app"><button class="nav__menu-btn__line" @click="showMenu()"><span></span></button></a>
         </div>
         <div class="nav__logo">
             <router-link to="/"><img src="../assets/logo.svg"></router-link>
@@ -109,6 +109,12 @@
                 border: solid 2px white;
                 position: relative;
 
+                @media screen and (max-width: 1024px) {
+                    width: 35px;
+                    height: 35px;
+                    padding: 0 !important;
+                }
+
                 span {
                     background: white;
                     display: block;
@@ -118,6 +124,11 @@
                     left: 50%;
                     transform: translateX(-50%);
 
+                    @media screen and (max-width: 1024px) {
+                        width: 12.5px;
+                        height: 1px;
+                    }
+
                     &::before, &::after {
                         content: '';
                         position: absolute;
@@ -126,16 +137,41 @@
                         background: white;
                         left: 50%;
                         transform: translateX(-50%);
+
+                        @media screen and (max-width: 1024px) {
+                            width: 12.5px;
+                            height: 1px;
+                        }
                     }
 
                     &::before {
                         top: -10px;
+
+                        @media screen and (max-width: 1024px) {
+                            top: -7.5px;
+                        }
                     }
 
                     &::after {
                         top: 10px;
+
+                        @media screen and (max-width: 1024px) {
+                            top: 7.5px;
+                        }
                     }
                 }
+            }
+        }
+
+        &__cart img {
+            @media screen and (max-width: 1024px) {
+                width: 35px;
+            }
+        }
+
+        &__logo img {
+            @media screen and (max-width: 1024px) {
+                width: 70px;
             }
         }
     }

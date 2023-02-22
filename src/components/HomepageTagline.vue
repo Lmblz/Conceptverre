@@ -30,10 +30,18 @@
             
             &__first {
                 margin-left: -5rem;
+
+                @media screen and (max-width: 800px) {
+                    margin: inherit;
+                }
             }
 
             &__second {
                 margin-right: -5rem;
+
+                @media screen and (max-width: 800px) {
+                    margin: inherit;
+                }
             }
         }
 

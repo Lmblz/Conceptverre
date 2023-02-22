@@ -43,10 +43,18 @@
         display: flex;
         margin-top: 10rem;
 
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
+
         &__images-wrapper {
             display: flex;
             gap: 1rem;
             width: 60%;
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+            }
 
             img {
                 width: 100%
@@ -77,11 +85,26 @@
             height: fit-content;
             margin: auto;
 
+            @media screen and (max-width: 1024px) {
+                width: calc(100% - 8rem);
+                text-align: left;
+                margin-top: 3rem;
+            }
+
+            @media screen and (max-width: 800px) {
+                width: calc(100% - 2rem);
+                padding: 0 1rem;
+            }
+
             &__separator {
                 height: 1px;
                 width: 7.5rem;
                 background: black;
                 float: right;
+
+                @media screen and (max-width: 1024px) {
+                    float: inherit;
+                }
             }
 
             h2 {
@@ -94,6 +117,11 @@
                 float: right;
                 margin-bottom: 5rem;
                 margin-top: 0;
+
+                @media screen and (max-width: 1024px) {
+                    float: inherit;
+                    width: 100%;
+                }
             }
         }
     }
