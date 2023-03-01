@@ -10,18 +10,30 @@
                         class="products__product"
                         v-for="product in products"
                         key="id"
+                        :data-cat="product.attributes[0].options[0]"
+                        :data-col="product.attributes[1].options[0]"
+                        :data-pri="product.price"
+                        :data-typ="product.categories[0].slug"
                     >
-                        <div class="products__product__container">
-                            <div class="products__product__container__image">
-                                <img :src="product.images[0].src" alt="" />
+                        <router-link :to="'/boutique/' + product.id">
+                            <div class="products__product__container">
+                                <div
+                                    class="products__product__container__image"
+                                >
+                                    <img :src="product.images[0].src" alt="" />
+                                </div>
+                                <div
+                                    class="products__product__container__title"
+                                >
+                                    <p>{{ product.name }}</p>
+                                </div>
+                                <div
+                                    class="products__product__container__price"
+                                >
+                                    <p>{{ product.price }}€</p>
+                                </div>
                             </div>
-                            <div class="products__product__container__title">
-                                <p>{{ product.name }}</p>
-                            </div>
-                            <div class="products__product__container__price">
-                                <p>{{ product.price }}€</p>
-                            </div>
-                        </div>
+                        </router-link>
                     </div>
                 </div>
             </main>
@@ -76,6 +88,14 @@ export default {
             max-width: 300px;
             margin: 0 30px;
             width: 100%;
+
+            &.search {
+                display: none;
+
+                &__result {
+                    display: block !important;
+                }
+            }
 
             &__container {
                 text-align: center;
