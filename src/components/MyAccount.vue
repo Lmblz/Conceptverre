@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .my-account {
     h2 {
         line-height: 0.6;
