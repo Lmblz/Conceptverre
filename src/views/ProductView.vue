@@ -85,7 +85,28 @@
             <div class="feedbacks-faq__faq">
                 <h3>Questions fréquentes</h3>
                 <div class="separator"></div>
-                <p>FAQ</p>
+                <div
+                    v-for="(question, index) in this.questions"
+                    :key="question.title"
+                >
+                    <div
+                        @click="() => handleAccordion(index)"
+                        class="feedbacks-faq__faq__question"
+                        :class="{ active: isExpanded }"
+                    >
+                        <p>
+                            {{ question.title }}
+                        </p>
+                    </div>
+                    <Collapse
+                        :when="questions[index].isExpanded"
+                        class="collapse feedbacks-faq__faq__reponse"
+                    >
+                        <p>
+                            {{ question.answer }}
+                        </p>
+                    </Collapse>
+                </div>
             </div>
         </div>
         <div class="help">
@@ -106,12 +127,32 @@
 </template>
 
 <script>
+import { Collapse } from "vue-collapsed";
+import $ from "jquery";
 import { client } from "../utils/axios";
 import PageHeader from "@/components/PageHeader.vue";
 import ThreeImagesFW from "@/components/ThreeImagesFW.vue";
+import { reactive } from "vue";
 export default {
     data() {
         return {
+            questions: reactive([
+                {
+                    title: "Quels sont vos délais de livraison ?",
+                    answer: "Nos délais de livraison sont d'habituellement ... jours pour un produit en stock. Si le produit doit être produit à la demande, le délais peut aller jusq'à ... semaines, dans ce cas nous vous invitons à nous contacter.",
+                    isExpanded: false, // Initial value
+                },
+                {
+                    title: "Comment personnaliser mon luminaire ?",
+                    answer: "Il vous suffit de vous rendre sur la page de personnalisation et de vous laisser guider par votre imagination.",
+                    isExpanded: false,
+                },
+                {
+                    title: "Comment installer ma suspension ?",
+                    answer: "Nos suspensions sont livrées avec un système breuveté de fixation, il vous suffit de percer un trou de la largeur de la cheville fournie avec votre luminaire, puis d'y visser votre applique.",
+                    isExpanded: false,
+                },
+            ]),
             currentProduct: {
                 images: [],
                 attributes: [
@@ -147,14 +188,27 @@ export default {
                 contentDescColl = "Super collection";
                 this.addCollContent(contentDescColl);
         }
+
+        setTimeout(() => {
+            $("bdi")[0].style.fontSize = "50px";
+            $("bdi")[0].children[0].style.fontSize = "50px";
+        }, 50);
     },
     methods: {
         addCollContent(content) {
             document.querySelector(".collection-info__content").innerHTML =
                 content;
         },
+        handleAccordion(selectedIndex) {
+            this.questions.forEach((_, index) => {
+                this.questions[index].isExpanded =
+                    index === selectedIndex
+                        ? !this.questions[index].isExpanded
+                        : false;
+            });
+        },
     },
-    components: { PageHeader, ThreeImagesFW },
+    components: { PageHeader, ThreeImagesFW, Collapse },
 };
 </script>
 
@@ -193,6 +247,11 @@ export default {
         &__price {
             display: flex;
             align-items: center;
+
+            & > p {
+                height: 100%;
+                margin: 0;
+            }
         }
 
         button {
@@ -268,6 +327,60 @@ export default {
                         text-align: left;
                     }
                 }
+            }
+        }
+    }
+
+    &__faq {
+        & > div {
+            &:last-of-type {
+                border-bottom: solid 1px #d6d6d6;
+            }
+        }
+
+        &__question {
+            border: solid 1px #d6d6d6;
+            border-bottom: 0;
+            cursor: pointer;
+
+            &:hover {
+                p {
+                    opacity: 0.7;
+                }
+            }
+
+            p {
+                margin: 0;
+                padding: 1rem;
+                text-decoration: underline;
+                transition: all 0.5s;
+                text-align: left;
+                text-transform: uppercase;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    right: 20px;
+                    top: 45%;
+                    width: 10px;
+                    height: 10px;
+                    border: solid 1px black;
+                    border-left: none;
+                    border-top: none;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        &__reponse {
+            transition: height 600ms cubic-bezier(0.3, 0, 0.6, 1);
+            p {
+                border-left: solid 1px #d6d6d6;
+                border-right: solid 1px #d6d6d6;
+
+                margin: 0;
+                padding: 1rem;
             }
         }
     }

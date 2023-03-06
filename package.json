@@ -13,9 +13,11 @@
     "core-js": "^3.8.3",
     "fs": "^0.0.1-security",
     "jquery": "^3.6.3",
+    "jquery-ui": "^1.13.2",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "vue": "^3.2.13",
+    "vue-collapsed": "^1.1.2",
     "vue-router": "^4.0.3",
     "vuex": "^4.1.0"
   },
