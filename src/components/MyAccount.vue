@@ -5,18 +5,34 @@
             <form action="">
                 <div>
                     <label for="l-name">Nom de famille</label>
-                    <input type="text" name="l-name" value="Leclercq" />
+                    <input
+                        type="text"
+                        name="l-name"
+                        v-model="
+                            this.$parent.$data.userData.user_display_name.split(
+                                ' '
+                            )[0]
+                        "
+                    />
                 </div>
                 <div>
                     <label for="f-name">Prénom</label>
-                    <input type="text" name="f-name" value="Charles" />
+                    <input
+                        type="text"
+                        name="f-name"
+                        v-model="
+                            this.$parent.$data.userData.user_display_name.split(
+                                ' '
+                            )[1]
+                        "
+                    />
                 </div>
                 <div>
                     <label for="email">Adresse e-mail</label>
                     <input
                         type="email"
                         name="email"
-                        value="c.leclercq@gmail.com"
+                        v-model="this.$parent.$data.userData.user_email"
                     />
                 </div>
                 <div>
@@ -57,6 +73,11 @@
 <script>
 export default {
     name: "MyAccount",
+    mounted() {
+        console.log(this.$parent.$data.userData.user_display_name.split(" "));
+
+        //console.log(this.$parent.$data.user_display_name.split(" "));
+    },
 };
 </script>
 
