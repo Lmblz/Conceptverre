@@ -1,23 +1,38 @@
 <template>
-    <div>
-        <h1>Créer un nouveau compte</h1>
+    <div class="form__create">
+        <h2>Créer un compte</h2>
         <form @submit.prevent="submitForm">
-            <label>
-                Nom d'utilisateur :
-                <input type="text" v-model="username" />
-            </label>
-            <br />
-            <label>
-                Adresse email :
-                <input type="email" v-model="email" />
-            </label>
-            <br />
-            <label>
-                Mot de passe :
-                <input type="password" v-model="password" />
-            </label>
-            <br />
-            <button type="submit">Créer un compte</button>
+            <input
+                type="text"
+                v-model="username"
+                class="username"
+                placeholder="Nom d'utilisateur"
+            />
+            <input
+                type="text"
+                v-model="fname"
+                class="fname"
+                placeholder="Nom de famille"
+            />
+            <input
+                type="text"
+                v-model="lname"
+                class="lname"
+                placeholder="Prénom"
+            />
+            <input
+                type="email"
+                v-model="email"
+                class="email"
+                placeholder="Adresse e-mail"
+            />
+            <input
+                type="password"
+                v-model="password"
+                class="password"
+                placeholder="Mot de passe"
+            />
+            <button type="submit" class="btn-black">Créer un compte</button>
         </form>
     </div>
 </template>
@@ -43,6 +58,8 @@ export default {
                         username: this.username,
                         email: this.email,
                         password: this.password,
+                        first_name: this.fname,
+                        last_name: this.lname,
                     },
                     {
                         headers: {
@@ -52,7 +69,8 @@ export default {
                         },
                     }
                 );
-                console.log(response.data);
+                this.$emit("loggedIn", response.data);
+                //console.log(response.data);
             } catch (error) {
                 console.error(error);
             }
@@ -60,3 +78,48 @@ export default {
     },
 };
 </script>
+
+<style lang="scss">
+.form__create {
+    margin-bottom: 5rem;
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        input {
+            height: 4rem;
+            padding-left: 2rem;
+            font-family: "Silk Serif", Arial, Helvetica, sans-serif !important;
+            font-size: 1.5rem !important;
+            border: solid 1px black;
+            outline: none;
+
+            &.email {
+                //grid-column: 1/3;
+            }
+
+            &::placeholder {
+                font-family: "Silk Serif", Arial, Helvetica, sans-serif;
+            }
+
+            &:first-of-type {
+                grid-column: 1/2;
+            }
+
+            &:last-of-type {
+                grid-column: 1/3;
+                width: 50%;
+                margin: auto;
+            }
+        }
+
+        button {
+            grid-row: 4/5;
+            grid-column: 1/3;
+            width: fit-content;
+            margin: auto;
+        }
+    }
+}
+</style>
