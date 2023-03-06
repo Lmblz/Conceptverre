@@ -95,10 +95,6 @@ export default {
             border: solid 1px black;
             outline: none;
 
-            &.email {
-                //grid-column: 1/3;
-            }
-
             &::placeholder {
                 font-family: "Silk Serif", Arial, Helvetica, sans-serif;
             }
