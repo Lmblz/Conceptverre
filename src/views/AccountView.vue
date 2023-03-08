@@ -119,6 +119,10 @@ export default {
 .account {
     display: flex;
 
+    @media all and (max-width: 1024px) {
+        flex-direction: column;
+    }
+
     .aside-account {
         max-width: 455px;
         width: 100%;
@@ -127,7 +131,13 @@ export default {
     .content {
         width: 100%;
         margin: 0 5vw 0 2vw;
+
+        @media all and (max-width: 1024px) {
+            width: 95% !important;
+            margin: auto !important;
+        }
     }
+
     .login {
         width: 90%;
         margin: auto;

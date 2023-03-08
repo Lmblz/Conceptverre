@@ -59,6 +59,19 @@ export default {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
 
+        @media all and (max-width: 800px) {
+            grid-template-columns: 1fr;
+
+            input {
+                grid-column: 1/2 !important;
+                width: 100% !important;
+            }
+
+            button {
+                grid-row: inherit !important;
+            }
+        }
+
         input {
             height: 4rem;
             padding-left: 2rem;

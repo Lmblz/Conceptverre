@@ -5,10 +5,12 @@
             titleHeader="Notre histoire"
         />
         <p>
-            <b>Concept Verre</b> voir le jour en 2007, quintessence d'un travail passionnant et passionné. <br>
-            Dans notre atelier basé à Nice, nous concevons des <b>luminaires d'intérieur au design épuré.</b>
+            <b>Concept Verre</b> voir le jour en 2007, quintessence d'un travail
+            passionnant et passionné. <br />
+            Dans notre atelier basé à Nice, nous concevons des
+            <b>luminaires d'intérieur au design épuré.</b>
         </p>
-        <StairsImages 
+        <StairsImages
             srcImageLeft="../assets/stairs-img-1"
             srcImageCenter="../assets/stairs-img-2"
             srcImageRight="../assets/stairs-img-3"
@@ -31,8 +33,8 @@
             finitionsPLeft="Tous nos produits intègrent les dernières évolutions technologiques. Ils reflètent notre savoir-faire en terme d’originalité et de qualité de fabrication. Depuis 2017, nous associons le verre à des matériaux naturels comme le marbre, la pierre et le bois."
             finitionsPCenter="La matière est l’essence de nos créations. Elle les sublime et leur confère un caractère unique. Nous avons pris le parti de marier des matériaux nobles et anciens pour magnifier nos luminaires au design moderne et raffiné."
             finitionsPRight="Nous proposons également une personnalisation de nos luminaires, afin d’adapter nos designs à tous les projets. Aujourd’hui, nous diffusons nos créations internationalement et celles-ci ornent les espaces des lieux les plus prestigieux."
-         />
-        <StairsImages 
+        />
+        <StairsImages
             srcImageLeft="../assets/stairs-img-4"
             srcImageCenter="../assets/stairs-img-5"
             srcImageRight="../assets/stairs-img-6"
@@ -50,29 +52,30 @@
 </template>
 
 <script>
-    import FinitionsBlocs from '@/components/FinitionsBlocs.vue';
-    import PageHeader from '@/components/PageHeader.vue';
-    import StairsImages from '@/components/StairsImages.vue';
-    export default {
-        name: 'HistoryView',
-        components: {
-            PageHeader,
-            StairsImages,
-            FinitionsBlocs
-        }
-    }
+import FinitionsBlocs from "@/components/FinitionsBlocs.vue";
+import PageHeader from "@/components/PageHeader.vue";
+import StairsImages from "@/components/StairsImages.vue";
+export default {
+    name: "HistoryView",
+    components: {
+        PageHeader,
+        StairsImages,
+        FinitionsBlocs,
+    },
+};
 </script>
 
 <style scoped lang="scss">
-    .history {
-        text-align: center;
+.history {
+    text-align: center;
 
-        > p {
-            margin-bottom: 6rem;
-        }
-
-        .stairs-images, .finitions-blocs {
-            margin-bottom: 10rem;
-        }
+    > p {
+        margin: 0 0.5rem 6rem 0.5rem;
     }
+
+    .stairs-images,
+    .finitions-blocs {
+        margin-bottom: 10rem;
+    }
+}
 </style>

@@ -142,7 +142,14 @@ export default {
 <style lang="scss" scoped>
 .shop-filters {
     max-width: 455px;
-    margin: 0 2%;
+
+    @media all and (max-width: 1600px) and (min-width: 1024px) {
+        max-width: 24vw;
+    }
+
+    @media all and (min-width: 1025px) {
+        margin: 0 2% !important;
+    }
 
     &__container {
         &__dropdown {

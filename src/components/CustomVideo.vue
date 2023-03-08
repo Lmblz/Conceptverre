@@ -10,59 +10,80 @@
             </p>
         </div>
         <div class="custom-video__video">
-            <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></video>
+            <iframe
+                width="1250"
+                height="703"
+                src="https://www.youtube.com/embed/8zFqvfFkneQ"
+                title="Personnalisation"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
-        name: 'CustomVideo',
-        props: [
-            'title',
-            'titleI',
-            'paragraph'
-        ]
-    }
+export default {
+    name: "CustomVideo",
+    props: ["title", "titleI", "paragraph"],
+};
 </script>
 
 <style lang="scss">
-    .custom-video {
+.custom-video {
+    display: flex;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    @media all and (max-width: 1300px) {
+        flex-direction: column;
+    }
+
+    &__text {
         display: flex;
-        margin-top: 10rem;
-        margin-bottom: 10rem;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        width: 45%;
 
-        &__text {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            width: 45%;
-
-            h3, p {
-                max-width: 550px;
-                margin: 1rem auto;
-                width: 100%;
-                padding: 0 1rem;
-            }
-
-            &__title {
-                &__separator {
-                    margin-left: 2.5%;
-                    height: 1px;
-                    width: 7.5rem;
-                    background: black;
-                    margin-bottom: 2rem;
-                }
-            }
+        @media all and (max-width: 1300px) {
+            width: inherit !important;
         }
 
-        &__video {
-            width: 55%;
-            video {
-                max-width: 930px;
-                width: 100%;
+        h3,
+        p {
+            max-width: 550px;
+            margin: 1rem auto;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
+        &__title {
+            &__separator {
+                margin-left: 2.5%;
+                height: 1px;
+                width: 7.5rem;
+                background: black;
+                margin-bottom: 2rem;
             }
         }
     }
+
+    &__video {
+        width: 55%;
+
+        @media all and (max-width: 1300px) {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
+        iframe {
+            max-width: 930px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1920/1080;
+        }
+    }
+}
 </style>

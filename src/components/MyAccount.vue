@@ -96,6 +96,12 @@ export default {
             grid-template-rows: auto;
             gap: 1rem;
 
+            @media all and (max-width: 1024px) {
+                grid-template-columns: 1fr !important;
+                width: 90%;
+                margin: auto;
+            }
+
             div {
                 display: flex;
                 flex-direction: column;
@@ -119,12 +125,22 @@ export default {
             grid-template-rows: auto;
             gap: 1rem;
 
+            @media all and (max-width: 1024px) {
+                grid-template-columns: 1fr !important;
+                width: 90%;
+                margin: auto;
+            }
+
             div {
                 display: flex;
                 flex-direction: column;
 
                 &:first-child {
                     grid-column: 1/3;
+
+                    @media all and (max-width: 1024px) {
+                        grid-column: inherit !important;
+                    }
                 }
 
                 input {

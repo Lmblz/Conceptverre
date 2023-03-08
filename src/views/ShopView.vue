@@ -73,21 +73,43 @@ export default {
 .content {
     display: flex;
 
+    @media all and (max-width: 1024px) {
+        flex-direction: column;
+
+        .shop-filters {
+            margin: 0 auto 5rem auto;
+        }
+    }
+
     main {
         width: 100%;
     }
 
     .products {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 2%;
-        width: 96%;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 0 auto 5rem auto;
+        width: 92%;
+
+        @media all and (max-width: 900px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         &__product {
             max-width: 300px;
-            margin: 0 30px;
             width: 100%;
+
+            & > a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            &:hover {
+                p {
+                    text-decoration: underline;
+                }
+            }
 
             &.search {
                 display: none;
@@ -99,6 +121,12 @@ export default {
 
             &__container {
                 text-align: center;
+
+                &__image {
+                    img {
+                        width: 100%;
+                    }
+                }
 
                 &__title {
                     p {

@@ -106,6 +106,11 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
 
+        @media all and (max-width: 800px) {
+            grid-template-columns: 1fr !important;
+            gap: 2rem;
+        }
+
         &__canals {
             text-align: center;
             p {
@@ -125,6 +130,11 @@ export default {
             grid-template-rows: 1fr 1fr;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+
+            @media all and (max-width: 800px) {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+            }
         }
 
         &__field {
@@ -142,6 +152,11 @@ export default {
             &:last-of-type {
                 grid-row: 2/3;
                 grid-column: 1/3;
+            }
+
+            @media all and (max-width: 800px) {
+                grid-row: inherit !important;
+                grid-column: inherit !important;
             }
 
             label {

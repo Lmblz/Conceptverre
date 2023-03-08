@@ -40,6 +40,11 @@ export default {
     max-width: 455px;
     margin: 0 2%;
 
+    @media all and (max-width: 1024px) {
+        max-width: 95% !important;
+        margin-bottom: 3rem;
+    }
+
     &__container {
         &__entry {
             background: white;
